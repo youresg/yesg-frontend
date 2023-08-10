@@ -1,31 +1,21 @@
 
-import './App.css';
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 
 function App() {
-  const [todos, setTodos]=useState([]);
+   const [hello, setHello] = useState('')
 
-  useEffect(() => {
-    fetch("여기에 백엔드 api 링크")
-    .then(response => response.json())
-    .then(data => {
-      setTodos(data);
-    })
-    .catch(error =>{
-      console.error("Error fetching todos:", error);
-    });
-  }, []);
+    useEffect(() => {
+        axios.get('/api/hello')
+        .then(response => setHello(response.data))
+        .catch(error => console.log(error))
+    }, []);
 
-  return (
-    <div className="App">
-       <h1>Todo List</h1>
-      <ul>
-        {todos.map(todo => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div>
+            백엔드에서 가져온 데이터입니다 : {hello}
+        </div>
+    );
 }
 
 export default App;
