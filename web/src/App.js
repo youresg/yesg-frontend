@@ -6,9 +6,17 @@ function App() {
    const [hello, setHello] = useState('')
 
     useEffect(() => {
-        axios.get('/success')
+        axios.get('/api/success')
         .then(response => setHello(response.data))
         .catch(error => console.log(error))
+        
+        axios.post('/api/success', null, { params: {'param' :'success'} })
+        .then(response => {
+            console.log('POST 요청 성공:', response.data);
+        })
+        .catch(error => {
+            console.log('POST 요청 실패:', error);
+        })
     }, []);
 
     return (
