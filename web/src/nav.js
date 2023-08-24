@@ -1,15 +1,17 @@
 import {Nav, Navbar, Container} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 function Navi() {
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="/home">Home</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/home">Home</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/ESG">ESG</Nav.Link>
-            <Nav.Link href="/information">Information</Nav.Link>
-            <Nav.Link href="/community">Community</Nav.Link>
+            <Nav.Link as={Link} to="/ESG">ESG</Nav.Link>
+            <Nav.Link as={Link} to="/information">Information</Nav.Link>
+            <Nav.Link as={Link} to="/community">Community</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
