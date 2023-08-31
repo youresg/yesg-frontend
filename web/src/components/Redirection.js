@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { setCookie } from './Cookies';
 
 const Redirection = () => {
 
@@ -11,7 +12,7 @@ const Redirection = () => {
     const accessToken = urlParams.get("accessToken");
     console.log("Access Token:", accessToken);
 
-    // Access Token Cookie에 저장    
+    setCookie("accessToken", accessToken);// Access Token Cookie에 저장    
 
 
     const navigateToHome = async () => {

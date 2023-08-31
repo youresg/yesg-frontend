@@ -1,0 +1,11 @@
+/* GoogleButton.css */
+.custom-google-button {
+    /* 여기에 버튼에 적용할 스타일 작성 */
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer
+  }
+  
