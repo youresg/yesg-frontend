@@ -1,12 +1,13 @@
 import React from 'react';
 import GoogleButton from './GoogleButton';
-import LogoutButton from './LogoutButton'; 
+
 
 const Main = () => {
 
     return (
         <div className="mainPage">
             <GoogleButton />
+
             <div className="image-container"><img className="ment" alt="ment" src="img/ment2.png" /></div>
             <div className="slide-container">
                 <img className="emoji" alt="emoji" src="img/emoji.png" />

@@ -11,9 +11,9 @@ const Redirection = () => {
     const urlParams = new URLSearchParams(location.search);
     const accessToken = urlParams.get("accessToken");
     console.log("Access Token:", accessToken);
-
-    setCookie("accessToken", accessToken);// Access Token Cookie에 저장    
-
+    
+    // Access Token Cookie에 저장  
+    setCookie("accessToken", accessToken);  
 
     const navigateToHome = async () => {
       await navigate("/home");
