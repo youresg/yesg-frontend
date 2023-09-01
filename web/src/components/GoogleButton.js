@@ -1,6 +1,7 @@
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import jwtDecode from "jwt-decode";
-import LogoutButton from './LogoutButton.js'; 
+import LogoutButton from './LogoutButton.js';
+import { getCookie } from "./Cookies.js";
 
 const GoogleButton = () => {
 
@@ -20,17 +21,19 @@ const GoogleButton = () => {
   return (
 
     <GoogleOAuthProvider clientId={clientId}>
+      {console.log('accessToken = ', getCookie("accessToken"))}
+      {getCookie("accessToken") == null ? (
         <GoogleLogin
           buttonText="Login"
           onSuccess={handleGoogleLoginSuccess}
           onError={handleGoogleLoginFail}
-        />
+        />) : (
         <LogoutButton
-        clientId="구글 OAuth 클라이언트 ID"
-        buttonText="로그아웃"
-        />
-      </GoogleOAuthProvider>
-    
+          clientId="구글 OAuth 클라이언트 ID"
+          buttonText="로그아웃"
+        />)}
+    </GoogleOAuthProvider>
+
   );
 };
 export default GoogleButton;

@@ -19,8 +19,8 @@ function App() {
                 <Routes>
                     <Route path="/home" element={<Main />} />
                     <Route path="/ESG" element={<ESG />} />
-                    <Route path="/information" element={<Information />} />
                     <Route path="/community" element={<Community />} />
+                    <Route path="/information" element={<Information />} />
                     <Route path="/oauth2/redirect" element={<Redirection />} />
                 </Routes>
             </BrowserRouter>

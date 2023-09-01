@@ -4,7 +4,8 @@ const cookies = new Cookies();
 
 //쿠키 저장
 export const setCookie = (name, value, option) => {
-  cookies.set(name, value, { ...option });
+  const thirtyMinutes = 30 * 60 * 1000; // 30분을 밀리초로 계산
+  cookies.set(name, value, { ...option, expires: new Date(Date.now() + thirtyMinutes), path: '/' });
 };
 
 //쿠키 가져옴
